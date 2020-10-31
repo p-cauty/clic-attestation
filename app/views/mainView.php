@@ -1,3 +1,8 @@
+<?php
+
+use PitouFW\Core\Request;
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -15,6 +20,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <?php if (Request::get()->getArg(0) !== 'generate'): ?>
         <div class="my-cookies" id="cookies_prompt">
             <aside class="actions">
                 <button onclick="setCookiesChoice(true)" class="btn btn-primary">Accepter</button>
@@ -27,6 +33,7 @@
                 statistiques, cliquez sur "Accepter". Sinon, cliquez sur "Refuser".
             </p>
         </div>
+        <?php endif ?>
         <div id="layoutDefault">
             <div id="layoutDefault_content">
                 <main>
@@ -64,6 +71,8 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="<?= ASSETS ?>js/scripts.js"></script>
+        <?php if (Request::get()->getArg(0) !== 'generate'): ?>
         <script src="<?= JS ?>mtm.js"></script>
+        <?php endif ?>
     </body>
 </html>
