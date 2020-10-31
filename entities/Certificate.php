@@ -3,6 +3,7 @@
 namespace PitouFW\Entity;
 
 use Exception;
+use PitouFW\Model\CertificateModel;
 use setasign\Fpdi\Fpdi;
 use setasign\Fpdi\PdfParser\PdfParserException;
 use chillerlan\QRCode\QRCode;
@@ -94,10 +95,10 @@ class Certificate {
         $this->pdf->SetFont('Helvetica', 'B', 10);
         $this->pdf->SetTextColor(0, 0, 0);
 
-        $this->pdf->Text(42, 51, $this->citizen->getFirstname() . ' ' . $this->citizen->getLastname());
+        $this->pdf->Text(42, 51, CertificateModel::handleUTF8($this->citizen->getFirstname() . ' ' . $this->citizen->getLastname()));
         $this->pdf->Text(42, 59, $this->citizen->getBirthDate());
-        $this->pdf->Text(106, 59, $this->citizen->getBirthLocation());
-        $this->pdf->Text(47, 67, $this->citizen->getStreetAddress());
+        $this->pdf->Text(106, 59, CertificateModel::handleUTF8($this->citizen->getBirthLocation()));
+        $this->pdf->Text(47, 67, CertificateModel::handleUTF8($this->citizen->getStreetAddress()));
 
         return $this;
     }
@@ -127,7 +128,7 @@ class Certificate {
         $this->pdf->SetFont('Helvetica', 'B', 10);
         $this->pdf->SetTextColor(0, 0, 0);
 
-        $this->pdf->Text(38, 235, $this->made_in);
+        $this->pdf->Text(38, 235, CertificateModel::handleUTF8($this->made_in));
         $this->pdf->Text(33, 243, date('d/m/Y', $this->made_at));
         $this->pdf->Text(91, 243, date('H:i', $this->made_at));
 

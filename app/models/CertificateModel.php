@@ -18,4 +18,8 @@ class CertificateModel {
         $pieces = explode('.', $jwt);
         return json_decode(base64_decode($pieces[0]), true);
     }
+
+    public static function handleUTF8(string $str): string {
+        return iconv('UTF-8', 'windows-1252', $str);
+    }
 }
