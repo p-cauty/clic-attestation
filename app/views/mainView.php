@@ -7,13 +7,26 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title><?= $TITLE ?></title>
-        <link href="<?= ASSETS ?>/css/styles.css" rel="stylesheet" />
-        <link rel="icon" type="image/x-icon" href="<?= ASSETS ?>/img/favicon.png" />
-        <link rel="apple-touch-icon" type="image/x-icon" href="<?= ASSETS ?>/img/favicon.png" />
+        <link href="<?= ASSETS ?>css/styles.css" rel="stylesheet" />
+        <link href="<?= CSS ?>custom.css" rel="stylesheet" />
+        <link rel="icon" type="image/x-icon" href="<?= ASSETS ?>img/favicon.png" />
+        <link rel="apple-touch-icon" type="image/x-icon" href="<?= ASSETS ?>img/favicon.png" />
         <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <div class="my-cookies" id="cookies_prompt">
+            <aside class="actions">
+                <button onclick="setCookiesChoice(true)" class="btn btn-primary">Accepter</button>
+                <button onclick="setCookiesChoice(false)" class="btn btn-primary ml-2">Refuser</button>
+            </aside>
+            <p>
+                Ce site utilise des cookies à des fins de statistiques de visites, en interne uniquement et grâce au
+                logiciel auto-hébergé <a href="https://fr.matomo.org/why-matomo/" target="_blank">Matomo</a>, sans
+                aucune utilisation de tracker externe. Pour nous autoriser à inclure votre visite de notre site dans nos
+                statistiques, cliquez sur "Accepter". Sinon, cliquez sur "Refuser".
+            </p>
+        </div>
         <div id="layoutDefault">
             <div id="layoutDefault_content">
                 <main>
@@ -50,6 +63,7 @@
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="<?= ASSETS ?>/js/scripts.js"></script>
+        <script src="<?= ASSETS ?>js/scripts.js"></script>
+        <script src="<?= JS ?>mtm.js"></script>
     </body>
 </html>

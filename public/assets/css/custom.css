@@ -1,0 +1,19 @@
+.my-cookies {
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    background-color: #000c;
+    padding: 20px;
+    width: 100%;
+}
+
+.my-cookies p {
+    color: white;
+    font-size: 14px;
+    margin: 0;
+}
+
+.my-cookies aside.actions {
+    float: right;
+    margin-left: 20px;
+}
