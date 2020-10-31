@@ -1,0 +1,16 @@
+{
+    "version": "1.0.0",
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.4",
+        "setasign/fpdf": "^1.8",
+        "chillerlan/php-qrcode": "^4.2",
+        "setasign/fpdi": "^2.3",
+        "ext-iconv": "*",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-pdo": "*",
+        "ext-openssl": "*",
+        "ext-redis": "*"
+    }
+}

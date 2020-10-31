@@ -1,0 +1,5 @@
+.idea/
+vendor/
+attestation-*.pdf
+*.dist.php
+log/*.log
