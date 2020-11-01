@@ -1,10 +1,13 @@
 <?php
 
 use PitouFW\Core\Alert;
+use PitouFW\Core\Controller;
 use PitouFW\Core\Request;
 use \PitouFW\Entity\Citizen;
 use \PitouFW\Entity\Certificate;
 use PitouFW\Model\CertificateModel;
+
+Controller::sendNoCacheHeaders();
 
 $jwt = Request::get()->getArg(1);
 if (!CertificateModel::isJwtValid($jwt)) {
