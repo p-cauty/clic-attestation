@@ -14,6 +14,7 @@ use PitouFW\Core\Request;
         <title><?= $TITLE ?></title>
         <link href="<?= ASSETS ?>css/styles.css" rel="stylesheet" />
         <link href="<?= CSS ?>custom.css" rel="stylesheet" />
+        <link href="<?= CSS ?>odometer.css" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="<?= ASSETS ?>img/favicon.png" />
         <link rel="apple-touch-icon" type="image/x-icon" href="<?= ASSETS ?>img/favicon.png" />
         <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
@@ -57,7 +58,7 @@ use PitouFW\Core\Request;
                         </div>
                         <hr class="my-5" />
                         <div class="row align-items-center">
-                            <div class="col-md-6 small">Fait avec ❤ par <a href="https://peter.cauty.fr">Peter Cauty</a> en Novembre 2020</div>
+                            <div class="col-md-6 small">Fait avec ❤ par <a href="https://peter.cauty.fr" style="text-decoration:underline">Peter Cauty</a> en Novembre 2020</div>
                             <div class="col-md-6 text-md-right small">
                                 <a href="<?= GITHUB ?>">Voir sur Github</a>
                                 &middot;
@@ -74,8 +75,9 @@ use PitouFW\Core\Request;
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="<?= ASSETS ?>js/scripts.js"></script>
+        <script src="<?= JS ?>odometer.min.js"></script>
         <?php if (Request::get()->getArg(0) !== 'generate'): ?>
-        <script src="<?= JS ?>mtm.js"></script>
+            <script src="<?= JS ?>mtm.js"></script>
         <?php endif ?>
     </body>
 </html>

@@ -8,9 +8,15 @@ abstract class Controller {
             $errCode = substr($name, 4, 3);
             $errMsg = preg_replace("#([A-Z])#", " $1", substr($name, 7));
             header("HTTP/1.1 $errCode$errMsg");
-            if (Request::get()->getArg(0) != 'api' && file_exists(VIEWS . 'error/' . $errCode . '.php')) {
-                self::renderView('error/' . $errCode);
-                die;
+            if (Request::get()->getArg(0) !== 'api') {
+                if (file_exists(VIEWS . 'error/' . $errCode . '.php')) {
+                    self::renderView('error/' . $errCode);
+                    die;
+                } else {
+                    die($errCode);
+                }
+            } else {
+                self::renderApiError(trim($errMsg));
             }
         }
     }

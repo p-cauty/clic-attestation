@@ -26,8 +26,12 @@ class CertificateModel {
         return iconv('UTF-8', 'windows-1252', $str);
     }
 
+    public static function getCount(): int {
+        return (int) file_get_contents(self::ATTEST_COUNT_FILE);
+    }
+
     public static function count(): void {
-        $count = (int) file_get_contents(self::ATTEST_COUNT_FILE);
+        $count = self::getCount();
         $count++;
         file_put_contents(self::ATTEST_COUNT_FILE, $count);
     }

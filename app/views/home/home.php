@@ -16,6 +16,10 @@ use PitouFW\Core\Alert;
                         <li>Utilisez le raccourci à chaque fois que vous avez besoin d'une attestation</li>
                         <li>Choisissez juste le motif, une attestation conforme est générée à votre nom et à la bonne date !</li>
                     </ol>
+                    <div class="text-center mt-5">
+                        <div style="font-size:112px;font-weight:bold;" class="odometer" id="counter">0</div>
+                        <div style="font-size:32px;">Attestations générées</div>
+                    </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="card rounded-lg text-dark">
@@ -70,3 +74,12 @@ use PitouFW\Core\Alert;
         </div>
     </div>
 </header>
+<script type="text/javascript">
+    const updateCounter = () => {
+        fetch('<?= APP_URL ?>api/count').then(response => response.json().then(json => {
+            document.getElementById('counter').innerText = json.data.count;
+        }));
+    };
+    setInterval(updateCounter, 10000);
+    updateCounter();
+</script>

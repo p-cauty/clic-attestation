@@ -10,5 +10,8 @@ const ROUTES = [
     'home' => 'home',
     'generate' => 'generate',
     'attestation' => 'attestation',
-    'terms' => 'terms'
+    'terms' => 'terms',
+    'api' => [
+        'count' => 'count'
+    ]
 ];
