@@ -12,7 +12,10 @@ use PitouFW\Core\Request;
                 </div>
                 <div class="col-lg-6">
                     <?= Alert::handle() ?>
-                    <div class="alert alert-info text-center">N'oubliez pas de mettre cette page en favoris pour ne pas la perdre !</div>
+                    <div class="alert alert-warning text-center">
+                        Si vous rencontrez un problème avec votre date de naissance,
+                        <a href="<?= WEBROOT ?>">générez un nouveau lien</a>, tout devrait fonctionner.
+                    </div>ZZ
                     <div class="card rounded-lg text-dark">
                         <div class="card-header py-4"><?= $firstname ?>, générez dès maintenant votre attestation !</div>
                         <div class="card-body">
@@ -49,6 +52,7 @@ use PitouFW\Core\Request;
                             </form>
                         </div>
                     </div>
+                    <div class="alert alert-info text-center">N'oubliez pas de mettre cette page en favoris pour ne pas la perdre !</div>
                 </div>
             </div>
         </div>
