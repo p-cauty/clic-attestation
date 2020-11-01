@@ -15,8 +15,8 @@ use PitouFW\Core\Request;
                     <div class="alert alert-warning text-center">
                         Si vous rencontrez un problème avec votre date de naissance,
                         <a href="<?= WEBROOT ?>">générez un nouveau lien</a>, tout devrait fonctionner.
-                    </div>ZZ
-                    <div class="card rounded-lg text-dark">
+                    </div>
+                    <div class="card rounded-lg text-dark mb-2">
                         <div class="card-header py-4"><?= $firstname ?>, générez dès maintenant votre attestation !</div>
                         <div class="card-body">
                             <form method="get" action="<?= WEBROOT ?>attestation/<?= Request::get()->getArg(1) ?>">
