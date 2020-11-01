@@ -149,7 +149,7 @@ class Certificate {
             'Naissance: ' . $this->citizen->getBirthDate() . ' a ' . $this->citizen->getBirthLocation() . ";\n" .
             'Adresse: ' . $this->citizen->getStreetAddress() . ";\n" .
             'Sortie: ' . date('d/m/Y \a H:i', $this->made_at) . ";\n" .
-            'Motifs: ' . $this->reason . ";\n"
+            'Motifs: ' . $this->reason
         );
         $this->pdf->Image($imgUrl, 150, 223, 40, 40, 'png');
         $this->pdf->AddPage();

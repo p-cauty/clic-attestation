@@ -14,7 +14,6 @@ const PROD_ENV = ENV_NAME === 'prod';
 define('POST', !isset($argc) && $_SERVER['REQUEST_METHOD'] === 'POST');
 define('WEBROOT', !isset($argc) ? str_replace('index.php', '', $_SERVER['SCRIPT_NAME']) : '');
 
-const JAM_CALLBACK_DEFAULT = APP_URL . 'user/jam';
 const ENTITIES = ROOT . 'entities/';
 const CORE = ROOT . 'core/';
 const APP = ROOT . 'app/';

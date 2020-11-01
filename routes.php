@@ -9,5 +9,6 @@
 const ROUTES = [
     'home' => 'home',
     'generate' => 'generate',
-    'attestation' => 'attestation'
+    'attestation' => 'attestation',
+    'terms' => 'terms'
 ];

@@ -11,7 +11,8 @@ class CertificateModel {
         }
 
         $pieces = explode('.', $jwt);
-        return base64_decode($pieces[1]) === hash_hmac('sha256', $pieces[0], JWT_KEY);
+        return base64_decode($pieces[1]) === hash_hmac('sha256', $pieces[0], JWT_KEY) ||
+            base64_decode($pieces[1]) === hash_hmac('sha256', $pieces[0], JWT_KEY_1);
     }
 
     public static function parseJWT(string $jwt): ?array {

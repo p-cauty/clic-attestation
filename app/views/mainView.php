@@ -48,10 +48,10 @@ use PitouFW\Core\Request;
                                 <div class="footer-brand"><?= NAME ?></div>
                                 <div class="mb-3">Générez des attestations<br />en un clic !</div>
                                 <div class="icon-list-social mb-5">
-                                    <a class="icon-list-social-link" href="mailto:<?= CONTACT_EMAIL ?>"><i class="fas fa-envelope"></i></a>
-                                    <a class="icon-list-social-link" href="<?= SOCIAL_TWITTER ?>"><i class="fab fa-twitter"></i></a>
-                                    <a class="icon-list-social-link" href="<?= SOCIAL_INSTAGRAM ?>"><i class="fab fa-instagram"></i></a>
-                                    <a class="icon-list-social-link" href="<?= SOCIAL_GITHUB ?>"><i class="fab fa-github"></i></a>
+                                    <a title="Contactez-nous" class="icon-list-social-link" href="mailto:<?= CONTACT_EMAIL ?>"><i class="fas fa-envelope"></i></a>
+                                    <a title="Twitter" class="icon-list-social-link" href="<?= SOCIAL_TWITTER ?>"><i class="fab fa-twitter"></i></a>
+                                    <a title="Instagram" class="icon-list-social-link" href="<?= SOCIAL_INSTAGRAM ?>"><i class="fab fa-instagram"></i></a>
+                                    <a title="Github" class="icon-list-social-link" href="<?= SOCIAL_GITHUB ?>"><i class="fab fa-github"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ use PitouFW\Core\Request;
                             <div class="col-md-6 text-md-right small">
                                 <a href="<?= GITHUB ?>">Voir sur Github</a>
                                 &middot;
-                                <a href="javascript:void(0)" onclick="alert('Aucune donnée n\'est sauvegardée.')">Politique de confidentialité</a>
+                                <a href="<?= WEBROOT ?>terms">Mentions légales</a>
                             </div>
                         </div>
                     </div>

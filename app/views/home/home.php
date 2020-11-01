@@ -35,7 +35,7 @@ use PitouFW\Core\Alert;
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label class="small text-gray-600" for="birth_date">Date de naissance</label>
-                                        <input class="form-control rounded-pill" id="birth_date" name="birth_date" type="date" required />
+                                        <input class="form-control rounded-pill" id="birth_date" name="birth_date" type="text" placeholder="jj/mm/aaaa" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}" required />
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="small text-gray-600" for="birth_location">Lieu de naissance</label>
@@ -53,6 +53,13 @@ use PitouFW\Core\Alert;
                                             <input class="form-control rounded-pill" id="birth_location" name="city" type="text" placeholder="Ville" required />
                                         </div>
                                     </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="small text-gray-500 text-justify">
+                                        En remplissant ce formulaire, vous acceptez que les informations fournies servent
+                                        à générer des attestations de déplacement dérogatoires.<br />
+                                        <a href="<?= WEBROOT ?>terms#privacy">En savoir plus</a>.
+                                    </label>
                                 </div>
                                 <button class="btn btn-green btn-marketing btn-block rounded-pill mt-4" type="submit">Créer mon lien personnel</button>
                             </form>
