@@ -18,7 +18,7 @@ if (POST) {
             json_encode([
                 'firstname' => $_POST['firstname'],
                 'lastname' => $_POST['lastname'],
-                'birth_date' => date('d/m/Y', strtotime($_POST['birth_date']) + (JET_LAG * 3600)),
+                'birth_date' => $_POST['birth_date'],
                 'birth_location' => $_POST['birth_location'],
                 'street_address' => $_POST['street_address'] . ' ' . $_POST['postal_code'] . ' ' . $_POST['city'],
                 'made_in' => $_POST['city']
