@@ -23,6 +23,5 @@ const CONTROLLERS = APP . 'controllers/';
 const ASSETS = WEBROOT . 'assets/';
 const CSS = ASSETS . 'css/';
 const JS = ASSETS . 'js/';
-const FONTS = ASSETS . 'fonts/';
 const IMG = ASSETS . 'img/';
 const VENDORS = ASSETS . 'vendors/';
