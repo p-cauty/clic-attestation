@@ -5,6 +5,8 @@ namespace PitouFW\Model;
 
 
 class CertificateModel {
+    const ATTEST_COUNT_FILE = ROOT . 'attest.txt';
+
     public static function isJwtValid(string $jwt): bool {
         if ($jwt === '') {
             return false;
@@ -22,5 +24,11 @@ class CertificateModel {
 
     public static function handleUTF8(string $str): string {
         return iconv('UTF-8', 'windows-1252', $str);
+    }
+
+    public static function count(): void {
+        $count = (int) file_get_contents(self::ATTEST_COUNT_FILE);
+        $count++;
+        file_put_contents(self::ATTEST_COUNT_FILE, $count);
     }
 }

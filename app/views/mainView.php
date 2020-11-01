@@ -68,6 +68,9 @@ use PitouFW\Core\Request;
                 </footer>
             </div>
         </div>
+        <script type="text/javascript">
+            const WEBROOT = '<?= WEBROOT ?>';
+        </script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="<?= ASSETS ?>js/scripts.js"></script>

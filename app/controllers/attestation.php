@@ -28,6 +28,8 @@ $certificate->setCitizen($citizen)
     ->setMadeIn($_GET['made_in'] ?? $data['made_in'])
     ->generate();
 
+CertificateModel::count();
+
 switch ($_GET['output'] ?? '') {
     /*case 'save':
         $certificate->save();
