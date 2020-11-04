@@ -18,7 +18,6 @@ use PitouFW\Core\Request;
         <link rel="icon" type="image/x-icon" href="<?= ASSETS ?>img/favicon.png" />
         <link rel="apple-touch-icon" type="image/x-icon" href="<?= ASSETS ?>img/favicon.png" />
         <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <?php if (Request::get()->getArg(0) !== 'generate'): ?>
@@ -72,11 +71,8 @@ use PitouFW\Core\Request;
         <script type="text/javascript">
             const WEBROOT = '<?= WEBROOT ?>';
         </script>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="<?= ASSETS ?>js/scripts.js"></script>
-        <script src="<?= JS ?>odometer.min.js"></script>
         <?php if (Request::get()->getArg(0) !== 'generate'): ?>
+            <script src="<?= JS ?>odometer.min.js"></script>
             <script src="<?= JS ?>mtm.js"></script>
         <?php endif ?>
     </body>
