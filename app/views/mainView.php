@@ -9,8 +9,7 @@ use PitouFW\Core\Request;
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+        <meta name="description" content="Générez des attestations en un clic !" />
         <title><?= $TITLE ?></title>
         <link href="<?= ASSETS ?>css/styles.css" rel="stylesheet" />
         <link href="<?= CSS ?>custom.css" rel="stylesheet" />

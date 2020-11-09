@@ -27,6 +27,8 @@ if (POST) {
         $signature = base64_encode(hash_hmac('sha256', $payload, JWT_KEY));
         $jwt = $payload . '.' . $signature;
 
+        setcookie('jwt', $jwt, time()+60*60*24*365, '/');
+
         Alert::success('Bienvenue sur votre générateur personnel d\'attestation !');
         header('location: ' . WEBROOT . 'generate/' . $jwt);
         die;

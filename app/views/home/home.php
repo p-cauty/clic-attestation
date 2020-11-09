@@ -1,6 +1,7 @@
 <?php
 
 use PitouFW\Core\Alert;
+use PitouFW\Model\CertificateModel;
 
 ?>
 <header class="page-header page-header-dark bg-img-repeat bg-blue pt-3 pt-lg-10" style='background-image: url("<?= IMG ?>pattern-shapes.png")'>
@@ -22,6 +23,14 @@ use PitouFW\Core\Alert;
                     </div>
                 </div>
                 <div class="col-lg-6">
+
+                <?php if (!empty($_COOKIE['jwt']) && CertificateModel::isJwtValid($_COOKIE['jwt'])): ?>
+                    <div class="card rounded-lg text-dark mb-4">
+                        <div class="card-header py-4">
+                            <a href="<?= WEBROOT ?>generate/<?= $_COOKIE['jwt'] ?>">Rouvrir mon dernier lien personnel <i class="fas fa-long-arrow-alt-right"></i></a></div>
+                    </div>
+                <?php endif ?>
+
                     <div class="card rounded-lg text-dark">
                         <div class="card-header py-4">Renseignez vos informations une seule fois !</div>
                         <div class="card-body">
