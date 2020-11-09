@@ -10,6 +10,7 @@ abstract class Controller {
             header("HTTP/1.1 $errCode$errMsg");
             if (Request::get()->getArg(0) !== 'api') {
                 if (file_exists(VIEWS . 'error/' . $errCode . '.php')) {
+                    Data::get()->add('TITLE', $errCode . $errMsg);
                     self::renderView('error/' . $errCode);
                     die;
                 } else {

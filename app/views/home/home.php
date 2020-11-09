@@ -16,8 +16,8 @@ use PitouFW\Core\Alert;
                         <li>Utilisez le raccourci à chaque fois que vous avez besoin d'une attestation</li>
                         <li>Choisissez juste le motif, une attestation conforme est générée à votre nom et à la bonne date !</li>
                     </ol>
-                    <div class="text-center mt-5">
-                        <div style="font-size:112px;font-weight:bold;" class="odometer" id="counter">0</div>
+                    <div class="mt-3 mt-lg-5 mb-5 mb-lg-0 counter">
+                        <div class="odometer" id="counter">0</div>
                         <div style="font-size:32px;">Attestations générées</div>
                     </div>
                 </div>

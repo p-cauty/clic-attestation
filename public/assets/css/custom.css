@@ -17,3 +17,18 @@
     float: right;
     margin-left: 20px;
 }
+
+.odometer {
+    font-size: 112px;
+    font-weight: bold;
+}
+
+@media (max-width: 991.98px) {
+    .counter {
+        text-align: center;
+    }
+
+    .odometer {
+        font-size: 72px;
+    }
+}
