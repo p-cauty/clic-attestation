@@ -72,7 +72,6 @@ use PitouFW\Core\Request;
             const WEBROOT = '<?= WEBROOT ?>';
         </script>
         <?php if (Request::get()->getArg(0) !== 'generate'): ?>
-            <script src="<?= JS ?>odometer.min.js"></script>
             <script src="<?= JS ?>mtm.js"></script>
         <?php endif ?>
     </body>
