@@ -28,7 +28,7 @@ $citizen->setFirstname($data['firstname'])
 $certificate = new Certificate();
 $certificate->setCitizen($citizen)
     ->setReason($_GET['reason'] ?? '')
-    ->setMadeIn($_GET['made_in'] ?? $data['made_in'])
+    ->setMadeIn(!empty($_GET['made_in']) ? $_GET['made_in'] : $data['made_in'])
     ->generate();
 
 CertificateModel::count();
