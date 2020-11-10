@@ -28,7 +28,7 @@ use PitouFW\Core\Request;
                                         <option value="achats">Achats de première nécessité</option>
                                         <option value="sante">Consultations et examens de santé</option>
                                         <option value="famille">Motif familial impérieux ou assistance aux personnes</option>
-                                        <option value="handicap">Accompagnement des personnes en situation de handicap</option>
+                                        <option value="handicap">Personnes en situation de handicap et leur accompagnant</option>
                                         <option value="sport_animaux">Sport & animaux</option>
                                         <option value="convocation">Convocation judiciaire ou administrative</option>
                                         <option value="missions">Participation à des missions d'intérêt général</option>
