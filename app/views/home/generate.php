@@ -38,7 +38,7 @@ use PitouFW\Core\Request;
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label class="small text-gray-600" for="made_in">Fait à</label>
-                                        <input class="form-control rounded-pill" id="made_in" name="made_in" type="text" placeholder="Ville" value="<?= $made_in ?>" />
+                                        <input class="form-control rounded-pill" id="made_in" name="made_in" type="text" placeholder="Ville" value="<?= $made_in ?>" required />
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="small text-gray-600" for="output">Type de rendu</label>

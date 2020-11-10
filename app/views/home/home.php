@@ -74,6 +74,7 @@ use PitouFW\Core\Alert;
         </div>
     </div>
 </header>
+<script src="<?= JS ?>odometer.min.js"></script>
 <script type="text/javascript">
     const updateCounter = () => {
         fetch('<?= APP_URL ?>api/count').then(response => response.json().then(json => {
