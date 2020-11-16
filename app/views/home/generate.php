@@ -4,6 +4,7 @@ use PitouFW\Core\Alert;
 use PitouFW\Core\Request;
 
 ?>
+<?php require VIEWS."donation.php"; ?>
 <header class="page-header page-header-dark bg-img-repeat bg-blue pt-3 pt-lg-10" style='background-image: url("<?= IMG ?>pattern-shapes.png")'>
     <div class="page-header-content">
         <div class="container px-2">
@@ -12,10 +13,12 @@ use PitouFW\Core\Request;
                 </div>
                 <div class="col-lg-6">
                     <?= Alert::handle() ?>
-                    <div class="alert alert-warning text-center">
-                        Si vous rencontrez un problème avec votre date de naissance,
-                        <a href="<?= WEBROOT ?>">générez un nouveau lien</a>, tout devrait fonctionner.
-                    </div>
+                    <?php if($birth_date == '01/01/1970'){ ?>
+                        <div class="alert alert-warning text-center">
+                            Si vous rencontrez un problème avec votre date de naissance,
+                            <a href="<?= WEBROOT ?>">générez un nouveau lien</a>, tout devrait fonctionner.
+                        </div>
+                    <?php } ?>
                     <div class="card rounded-lg text-dark mb-2">
                         <div class="card-header py-4"><?= $firstname ?>, générez dès maintenant votre attestation !</div>
                         <div class="card-body">

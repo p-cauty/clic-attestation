@@ -74,6 +74,9 @@ use PitouFW\Core\Alert;
         </div>
     </div>
 </header>
+
+<?php require VIEWS."donation.php"; ?>
+
 <script src="<?= JS ?>odometer.min.js"></script>
 <script type="text/javascript">
     const updateCounter = () => {
