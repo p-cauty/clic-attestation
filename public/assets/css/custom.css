@@ -23,6 +23,26 @@
     font-weight: bold;
 }
 
+.alert {
+    position: relative;
+}
+
+.alert-close {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: darkgray;
+    color: white;
+    height: 17px;
+    width: 17px;
+    text-align: center;
+    line-height: 12px;
+    border-radius: 10px;
+    padding-left: 1px;
+    cursor: pointer;
+}
+
 @media (max-width: 991.98px) {
     .counter {
         text-align: center;

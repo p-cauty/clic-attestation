@@ -71,6 +71,19 @@ use PitouFW\Core\Request;
         <script type="text/javascript">
             const WEBROOT = '<?= WEBROOT ?>';
         </script>
+        <script type="text/javascript">
+            const closeNotice = (id) => {
+                document.getElementById(id).style.display = 'none';
+                localStorage.setItem(id + '-closed', '1');
+            };
+
+            const notices = document.getElementsByClassName('alert');
+            for (let i in notices) {
+                if (localStorage.getItem(notices[i].id + '-closed') !== null) {
+                    notices[i].style.display = 'none';
+                }
+            }
+        </script>
         <?php if (Request::get()->getArg(0) !== 'generate'): ?>
             <script src="<?= JS ?>mtm.js"></script>
         <?php endif ?>
