@@ -5,7 +5,7 @@ use PitouFW\Core\Alert;
 ?>
 <header class="page-header page-header-dark bg-img-repeat bg-blue pt-3 pt-lg-10" style='background-image: url("<?= IMG ?>pattern-shapes.png")'>
     <div class="page-header-content">
-        <div class="container">
+        <div class="container px-4">
             <?= Alert::handle() ?>
             <div class="row align-items-center">
                 <div class="col-lg-6">

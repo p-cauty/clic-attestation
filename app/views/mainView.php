@@ -13,7 +13,7 @@ use PitouFW\Core\Request;
         <meta name="author" content="" />
         <title><?= $TITLE ?></title>
         <link href="<?= ASSETS ?>css/styles.css" rel="stylesheet" />
-        <link href="<?= CSS ?>custom.css" rel="stylesheet" />
+        <link href="<?= CSS ?>custom.css?v=2" rel="stylesheet" />
         <link href="<?= CSS ?>odometer.css" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="<?= ASSETS ?>img/favicon.png" />
         <link rel="apple-touch-icon" type="image/x-icon" href="<?= ASSETS ?>img/favicon.png" />
@@ -37,6 +37,26 @@ use PitouFW\Core\Request;
         <div id="layoutDefault">
             <div id="layoutDefault_content">
                 <main>
+                    <section class="notice bg-light py-2 position-relative" id="alert-donation">
+                        <span class="alert-close mt-1 mr-1" onclick="closeNotice('alert-donation')" title="Ne plus afficher ce message">&times;</span>
+                        <div class="container p-0">
+                            <div class="row align-items-center justify-content-center text-center">
+                                <div class="col-md-6">
+                                    <small>Vous êtes chaque jour plus nombreux à utiliser <?= NAME ?> et nous en sommes ravis ! Aidez-nous
+                                        à maintenir le service:</small>
+                                </div>
+                                <div class="col-md-6">
+                                    <form action="https://www.paypal.com/donate" method="post" target="_top" class="mt-2">
+                                        <input type="hidden" name="hosted_button_id" value="XGV4DEC6WVFYL"/>
+                                        <input type="image" class="img-fluid"
+                                               src="<?= IMG ?>paypal_btn.png" border="0"
+                                               name="submit" title="PayPal - The safer, easier way to pay online!"
+                                               alt="Donate with PayPal button"/>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     <?php require_once @$appView; ?>
                 </main>
             </div>
@@ -70,6 +90,19 @@ use PitouFW\Core\Request;
         </div>
         <script type="text/javascript">
             const WEBROOT = '<?= WEBROOT ?>';
+        </script>
+        <script type="text/javascript">
+            const closeNotice = (id) => {
+                document.getElementById(id).style.display = 'none';
+                localStorage.setItem(id + '-closed', '1');
+            };
+
+            const notices = document.getElementsByClassName('notice');
+            for (let i in notices) {
+                if (localStorage.getItem(notices[i].id + '-closed') !== null) {
+                    notices[i].style.display = 'none';
+                }
+            }
         </script>
         <?php if (Request::get()->getArg(0) !== 'generate'): ?>
             <script src="<?= JS ?>mtm.js"></script>
