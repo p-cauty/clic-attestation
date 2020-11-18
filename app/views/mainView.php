@@ -67,12 +67,19 @@ use PitouFW\Core\Request;
                             <div class="col-lg-3">
                                 <div class="footer-brand"><?= NAME ?></div>
                                 <div class="mb-3">Générez des attestations<br />en un clic !</div>
-                                <div class="icon-list-social mb-5">
+                                <div class="icon-list-social">
                                     <a title="Contactez-nous" class="icon-list-social-link" href="mailto:<?= CONTACT_EMAIL ?>"><i class="fas fa-envelope"></i></a>
                                     <a title="Twitter" class="icon-list-social-link" href="<?= SOCIAL_TWITTER ?>"><i class="fab fa-twitter"></i></a>
                                     <a title="Instagram" class="icon-list-social-link" href="<?= SOCIAL_INSTAGRAM ?>"><i class="fab fa-instagram"></i></a>
                                     <a title="Github" class="icon-list-social-link" href="<?= SOCIAL_GITHUB ?>"><i class="fab fa-github"></i></a>
                                 </div>
+                                <form action="https://www.paypal.com/donate" method="post" target="_top" class="mt-2 mb-5">
+                                    <input type="hidden" name="hosted_button_id" value="XGV4DEC6WVFYL"/>
+                                    <input type="image" class="img-fluid"
+                                           src="<?= IMG ?>paypal_btn.png" border="0"
+                                           name="submit" title="PayPal - The safer, easier way to pay online!"
+                                           alt="Donate with PayPal button"/>
+                                </form>
                             </div>
                         </div>
                         <hr class="my-5" />
