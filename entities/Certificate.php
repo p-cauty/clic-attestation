@@ -10,7 +10,8 @@ use chillerlan\QRCode\QRCode;
 
 class Certificate {
     const REASON_WORK = 'travail';
-    const REASON_GROCERIES = 'achats_culturel_cultuel';
+    const REASON_GROCERIES = 'achats';
+    const REASON_CULTURAL = 'achats_culturel_cultuel';
     const REASON_HEALTH = 'sante';
     const REASON_FAMILY = 'famille';
     const REASON_DISABILITY = 'handicap';
@@ -22,6 +23,7 @@ class Certificate {
     const Y_REASON = [
         self::REASON_WORK => 102,
         self::REASON_GROCERIES => 127,
+        self::REASON_CULTURAL => 127,
         self::REASON_HEALTH => 144.5,
         self::REASON_FAMILY => 153,
         self::REASON_DISABILITY => 166,
@@ -149,7 +151,7 @@ class Certificate {
             'Naissance: ' . $this->citizen->getBirthDate() . ' a ' . $this->citizen->getBirthLocation() . ";\n" .
             'Adresse: ' . $this->citizen->getStreetAddress() . ";\n" .
             'Sortie: ' . date('d/m/Y \a H:i', $this->made_at) . ";\n" .
-            'Motifs: ' . $this->reason
+            'Motifs: ' . ($this->reason === self::REASON_GROCERIES ? self::REASON_CULTURAL : $this->reason)
         );
         $this->pdf->Image($imgUrl, 150, 248, 40, 40, 'png');
         $this->pdf->AddPage();
