@@ -10,7 +10,7 @@ use chillerlan\QRCode\QRCode;
 
 class Certificate {
     const REASON_WORK = 'travail';
-    const REASON_GROCERIES = 'achats';
+    const REASON_GROCERIES = 'achats_culturel_cultuel';
     const REASON_HEALTH = 'sante';
     const REASON_FAMILY = 'famille';
     const REASON_DISABILITY = 'handicap';
@@ -20,15 +20,15 @@ class Certificate {
     const REASON_CHILDREN = 'enfants';
 
     const Y_REASON = [
-        self::REASON_WORK => 94,
-        self::REASON_GROCERIES => 110,
-        self::REASON_HEALTH => 130,
-        self::REASON_FAMILY => 144,
-        self::REASON_DISABILITY => 158,
-        self::REASON_WORKOUT => 172,
-        self::REASON_LEGAL => 194,
-        self::REASON_PUBLIC_INTEREST => 208,
-        self::REASON_CHILDREN => 224
+        self::REASON_WORK => 102,
+        self::REASON_GROCERIES => 127,
+        self::REASON_HEALTH => 144.5,
+        self::REASON_FAMILY => 153,
+        self::REASON_DISABILITY => 166,
+        self::REASON_WORKOUT => 174,
+        self::REASON_LEGAL => 200,
+        self::REASON_PUBLIC_INTEREST => 209,
+        self::REASON_CHILDREN => 217
     ];
 
     private ?Citizen $citizen = null;
@@ -95,10 +95,10 @@ class Certificate {
         $this->pdf->SetFont('Helvetica', 'B', 10);
         $this->pdf->SetTextColor(0, 0, 0);
 
-        $this->pdf->Text(42, 51, CertificateModel::handleUTF8($this->citizen->getFirstname() . ' ' . $this->citizen->getLastname()));
-        $this->pdf->Text(42, 59, $this->citizen->getBirthDate());
-        $this->pdf->Text(106, 59, CertificateModel::handleUTF8($this->citizen->getBirthLocation()));
-        $this->pdf->Text(47, 67, CertificateModel::handleUTF8($this->citizen->getStreetAddress()));
+        $this->pdf->Text(35, 49, CertificateModel::handleUTF8($this->citizen->getFirstname() . ' ' . $this->citizen->getLastname()));
+        $this->pdf->Text(34.5, 55.5, $this->citizen->getBirthDate());
+        $this->pdf->Text(78, 55.5, CertificateModel::handleUTF8($this->citizen->getBirthLocation()));
+        $this->pdf->Text(40, 62, CertificateModel::handleUTF8($this->citizen->getStreetAddress()));
 
         return $this;
     }
@@ -111,8 +111,8 @@ class Certificate {
             die('Raison invalide');
         }
 
-        $this->pdf->SetFont('Helvetica', 'B', 20);
-        $this->pdf->Text(29, self::Y_REASON[$this->reason], 'X');
+        $this->pdf->SetFont('Helvetica', 'B', 12);
+        $this->pdf->Text(16, self::Y_REASON[$this->reason], 'X');
 
         return $this;
     }
@@ -128,9 +128,9 @@ class Certificate {
         $this->pdf->SetFont('Helvetica', 'B', 10);
         $this->pdf->SetTextColor(0, 0, 0);
 
-        $this->pdf->Text(38, 235, CertificateModel::handleUTF8($this->made_in));
-        $this->pdf->Text(33, 243, date('d/m/Y', $this->made_at));
-        $this->pdf->Text(91, 243, date('H:i', $this->made_at));
+        $this->pdf->Text(30, 270, CertificateModel::handleUTF8($this->made_in));
+        $this->pdf->Text(24, 276.5, date('d/m/Y', $this->made_at));
+        $this->pdf->Text(82, 276.5, date('H:i', $this->made_at));
 
         $this->filename = 'attestation-' . date('Y-m-d_H-i', $this->made_at) . '.pdf';
 
@@ -151,7 +151,7 @@ class Certificate {
             'Sortie: ' . date('d/m/Y \a H:i', $this->made_at) . ";\n" .
             'Motifs: ' . $this->reason
         );
-        $this->pdf->Image($imgUrl, 150, 223, 40, 40, 'png');
+        $this->pdf->Image($imgUrl, 150, 248, 40, 40, 'png');
         $this->pdf->AddPage();
         $this->pdf->Image($imgUrl, 7, 7, 120, 120, 'png');
 
