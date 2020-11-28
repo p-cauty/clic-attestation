@@ -32,14 +32,18 @@ use PitouFW\Core\Request;
                                     <select class="form-control rounded-pill" id="reason" name="reason" required>
                                         <option value="">-- Choisissez un motif --</option>
                                         <option value="travail">Déplacement sur le lieu de travail</option>
-                                        <option value="achats">Achats de première nécessité</option>
+                                        <option value="achats_culturel_cultuel">Achats de première nécessité</option>
+                                        <option value="achats_culturel_cultuel">Établissement culturel ou lieu de culte</option>
                                         <option value="sante">Consultations et examens de santé</option>
-                                        <option value="famille">Motif familial impérieux ou assistance aux personnes</option>
-                                        <option value="handicap">Personnes en situation de handicap et leur accompagnant</option>
-                                        <option value="sport_animaux">Sport & animaux</option>
+                                        <option value="famille">Motif familial impérieux</option>
+                                        <option value="famille">Assistance aux personnes</option>
+                                        <option value="famille">Garde d'enfants</option>
+                                        <option value="handicap">Personnes en situation de handicap</option>
+                                        <option value="sport_animaux">Sport & animaux (3h à 20km)</option>
                                         <option value="convocation">Convocation judiciaire ou administrative</option>
-                                        <option value="missions">Participation à des missions d'intérêt général</option>
-                                        <option value="enfants">Déplacement pour chercher les enfants à l’école</option>
+                                        <option value="convocation">Service public</option>
+                                        <option value="missions">Missions d'intérêt général</option>
+                                        <option value="enfants">École et activités périscolaires</option>
                                     </select>
                                 </div>
                                 <div class="form-row">
