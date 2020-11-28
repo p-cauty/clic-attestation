@@ -19,6 +19,10 @@ use PitouFW\Core\Request;
                             <a href="<?= WEBROOT ?>">générez un nouveau lien</a>.
                         </div>
                     <?php endif ?>
+                    <div id="v2-alert" class="notice alert alert-success text-center">
+                        <span class="alert-close" onclick="closeNotice('v2-alert')" title="Ne plus afficher ce message">&times;</span>
+                        <?= NAME ?> est déjà compatible avec la nouvelle attestation du 28 Novembre !
+                    </div>
                     <div class="card rounded-lg text-dark mb-2">
                         <div class="card-header py-4"><?= $firstname ?>, générez dès maintenant votre attestation !</div>
                         <div class="card-body">
@@ -55,7 +59,10 @@ use PitouFW\Core\Request;
                             </form>
                         </div>
                     </div>
-                    <div class="alert alert-info text-center">N'oubliez pas de mettre cette page en favoris pour ne pas la perdre !</div>
+                    <div id="bookmark-alert" class="notice alert alert-info text-center">
+                        <span class="alert-close" onclick="closeNotice('bookmark-alert')" title="Ne plus afficher ce message">&times;</span>
+                        N'oubliez pas de mettre cette page en favoris pour ne pas la perdre
+                    </div>
                 </div>
             </div>
         </div>
