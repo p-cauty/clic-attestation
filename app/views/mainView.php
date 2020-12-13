@@ -37,22 +37,19 @@ use PitouFW\Core\Request;
         <div id="layoutDefault">
             <div id="layoutDefault_content">
                 <main>
-                    <section class="notice bg-light py-2 position-relative" id="alert-donation">
-                        <span class="alert-close mt-1 mr-1" onclick="closeNotice('alert-donation')" title="Ne plus afficher ce message">&times;</span>
-                        <div class="container p-0">
+                    <section class="notice bg-success text-white py-2 position-relative" id="alert-jam">
+                        <span class="alert-close mt-1 mr-1" onclick="closeNotice('alert-jam')" title="Ne plus afficher ce message">&times;</span>
+                        <div class="container">
                             <div class="row align-items-center justify-content-center text-center">
-                                <div class="col-md-6">
-                                    <small>Vous êtes chaque jour plus nombreux à utiliser <?= NAME ?> et nous en sommes ravis ! Aidez-nous
-                                        à maintenir le service:</small>
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    Vous avez aimé la manière dont <strong><?= NAME ?></strong> se rappelle de vos informations  tout en
+                                    respectant votre vie privée ? Alors vous allez adorer <strong>JustAuthMe</strong>, notre application qui
+                                    ringardise les formulaires et les mots de passe.
                                 </div>
-                                <div class="col-md-6">
-                                    <form action="https://www.paypal.com/donate" method="post" target="_top" class="mt-2">
-                                        <input type="hidden" name="hosted_button_id" value="XGV4DEC6WVFYL"/>
-                                        <input type="image" class="img-fluid"
-                                               src="<?= IMG ?>paypal_btn.png" border="0"
-                                               name="submit" title="PayPal - The safer, easier way to pay online!"
-                                               alt="Donate with PayPal button"/>
-                                    </form>
+                                <div class="col-md-6 mb-2 mb-md-0">
+                                    <a href="https://justauth.me" class="btn rounded-pill btn-white">
+                                        Découvrir JustAuthMe
+                                    </a>
                                 </div>
                             </div>
                         </div>
