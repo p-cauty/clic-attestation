@@ -10,27 +10,23 @@ use chillerlan\QRCode\QRCode;
 
 class Certificate {
     const REASON_WORK = 'travail';
-    const REASON_GROCERIES = 'achats';
-    const REASON_CULTURAL = 'achats_culturel_cultuel';
     const REASON_HEALTH = 'sante';
     const REASON_FAMILY = 'famille';
     const REASON_DISABILITY = 'handicap';
-    const REASON_WORKOUT = 'sport_animaux';
     const REASON_LEGAL = 'convocation';
     const REASON_PUBLIC_INTEREST = 'missions';
-    const REASON_CHILDREN = 'enfants';
+    const REASON_TRANSIT = 'transits';
+    const REASON_PET = 'animaux';
 
     const Y_REASON = [
-        self::REASON_WORK => 102,
-        self::REASON_GROCERIES => 127,
-        self::REASON_CULTURAL => 127,
-        self::REASON_HEALTH => 144.5,
-        self::REASON_FAMILY => 153,
-        self::REASON_DISABILITY => 166,
-        self::REASON_WORKOUT => 174,
-        self::REASON_LEGAL => 200,
-        self::REASON_PUBLIC_INTEREST => 209,
-        self::REASON_CHILDREN => 217
+        self::REASON_WORK => 107,
+        self::REASON_HEALTH => 118.5,
+        self::REASON_FAMILY => 130.3,
+        self::REASON_DISABILITY => 142,
+        self::REASON_LEGAL => 149.7,
+        self::REASON_PUBLIC_INTEREST => 157.5,
+        self::REASON_TRANSIT => 169.3,
+        self::REASON_PET => 181
     ];
 
     private ?Citizen $citizen = null;
@@ -97,10 +93,10 @@ class Certificate {
         $this->pdf->SetFont('Helvetica', 'B', 10);
         $this->pdf->SetTextColor(0, 0, 0);
 
-        $this->pdf->Text(35, 49, CertificateModel::handleUTF8($this->citizen->getFirstname() . ' ' . $this->citizen->getLastname()));
-        $this->pdf->Text(34.5, 55.5, $this->citizen->getBirthDate());
-        $this->pdf->Text(78, 55.5, CertificateModel::handleUTF8($this->citizen->getBirthLocation()));
-        $this->pdf->Text(40, 62, CertificateModel::handleUTF8($this->citizen->getStreetAddress()));
+        $this->pdf->Text(42, 62.7, CertificateModel::handleUTF8($this->citizen->getFirstname() . ' ' . $this->citizen->getLastname()));
+        $this->pdf->Text(42, 69.7, $this->citizen->getBirthDate());
+        $this->pdf->Text(111, 69.7, CertificateModel::handleUTF8($this->citizen->getBirthLocation()));
+        $this->pdf->Text(47, 76.7, CertificateModel::handleUTF8($this->citizen->getStreetAddress()));
 
         return $this;
     }
@@ -114,7 +110,7 @@ class Certificate {
         }
 
         $this->pdf->SetFont('Helvetica', 'B', 12);
-        $this->pdf->Text(16, self::Y_REASON[$this->reason], 'X');
+        $this->pdf->Text(25.5, self::Y_REASON[$this->reason], 'X');
 
         return $this;
     }
@@ -130,9 +126,9 @@ class Certificate {
         $this->pdf->SetFont('Helvetica', 'B', 10);
         $this->pdf->SetTextColor(0, 0, 0);
 
-        $this->pdf->Text(30, 270, CertificateModel::handleUTF8($this->made_in));
-        $this->pdf->Text(24, 276.5, date('d/m/Y', $this->made_at));
-        $this->pdf->Text(82, 276.5, date('H:i', $this->made_at));
+        $this->pdf->Text(38, 196, CertificateModel::handleUTF8($this->made_in));
+        $this->pdf->Text(33, 203, date('d/m/Y', $this->made_at));
+        $this->pdf->Text(111, 203, date('H:i', $this->made_at));
 
         $this->filename = 'attestation-' . date('Y-m-d_H-i', $this->made_at) . '.pdf';
 
@@ -151,9 +147,9 @@ class Certificate {
             'Naissance: ' . $this->citizen->getBirthDate() . ' a ' . $this->citizen->getBirthLocation() . ";\n" .
             'Adresse: ' . $this->citizen->getStreetAddress() . ";\n" .
             'Sortie: ' . date('d/m/Y \a H:i', $this->made_at) . ";\n" .
-            'Motifs: ' . ($this->reason === self::REASON_GROCERIES ? self::REASON_CULTURAL : $this->reason)
+            'Motifs: ' . $this->reason
         );
-        $this->pdf->Image($imgUrl, 150, 248, 40, 40, 'png');
+        $this->pdf->Image($imgUrl, 150, 215, 40, 40, 'png');
         $this->pdf->AddPage();
         $this->pdf->Image($imgUrl, 7, 7, 120, 120, 'png');
 
