@@ -3,6 +3,7 @@
 namespace PitouFW\Entity;
 
 use Exception;
+use PitouFW\Core\Utils;
 use PitouFW\Model\CertificateModel;
 use setasign\Fpdi\Fpdi;
 use setasign\Fpdi\PdfParser\PdfParserException;
@@ -59,7 +60,7 @@ class Certificate {
         }
 
         $this->pdf->useTemplate($tpl);
-        $this->made_at = time() + (JET_LAG * 3600);
+        $this->made_at = Utils::time();
     }
 
     /**

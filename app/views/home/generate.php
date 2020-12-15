@@ -2,6 +2,7 @@
 
 use PitouFW\Core\Alert;
 use PitouFW\Core\Request;
+use PitouFW\Core\Utils;
 
 ?>
 <header class="page-header page-header-dark bg-img-repeat bg-blue pt-3 pt-lg-10" style='background-image: url("<?= IMG ?>pattern-shapes.png")'>
@@ -23,7 +24,14 @@ use PitouFW\Core\Request;
                         <span class="alert-close" onclick="closeNotice('v3-alert')" title="Ne plus afficher ce message">&times;</span>
                         <?= NAME ?> est déjà compatible avec la nouvelle attestation de couvre-feu du 15 Décembre !
                     </div>
-                    <?php if (date('H') >= 6 && date('H') < 19): ?>
+                    <?php if (Utils::time() > 1608789600 && Utils::time() <= 1608876000): ?>
+                    <div class="card rounded-lg text-dark mb-2">
+                        <div class="card-body text-center">
+                            <h1>C'est Noël ! Pas de couvre-feu cette nuit 🎉</h1>
+                            <img src="<?= IMG ?>santa_visit.png" style="width:90%" />
+                        </div>
+                    </div>
+                    <?php elseif (date('H') >= 6 && date('H') < 19): ?>
                     <div class="notice alert alert-danger text-center">
                         Il n'y a plus besoin d'attestation en journée depuis le 15 Décembre. Revenez à partir de 19h pour
                         générer une attestation de couvre-feu.
