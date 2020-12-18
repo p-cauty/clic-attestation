@@ -31,7 +31,7 @@ use PitouFW\Core\Utils;
                             <img src="<?= IMG ?>santa_visit.png" style="width:90%" />
                         </div>
                     </div>
-                    <?php elseif (date('H') >= 6 && date('H') < 19): ?>
+                    <?php elseif (date('H', Utils::time()) >= 6 && date('H', Utils::time()) < 19): ?>
                     <div class="notice alert alert-danger text-center">
                         Il n'y a plus besoin d'attestation en journée depuis le 15 Décembre. Revenez à partir de 19h pour
                         générer une attestation de couvre-feu.
