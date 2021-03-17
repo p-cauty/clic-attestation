@@ -54,7 +54,7 @@ use PitouFW\Core\Utils;
                                         <option value="convocation">Convocation judiciaire ou administrative</option>
                                         <option value="missions">Missions d'intérêt général</option>
                                         <option value="transits">Transits ferroviaires ou aériens</option>
-                                        <option value="sport_animaux">Animaux de compagnie (brefs à 1km)</option>
+                                        <option value="animaux">Animaux de compagnie (brefs à 1km)</option>
                                     </select>
                                 </div>
                                 <div class="form-row">
