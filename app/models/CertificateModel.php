@@ -4,6 +4,8 @@
 namespace PitouFW\Model;
 
 
+use PitouFW\Core\Utils;
+
 class CertificateModel {
     const ATTEST_COUNT_FILE = ROOT . 'attest.txt';
 
@@ -34,5 +36,10 @@ class CertificateModel {
         $count = self::getCount();
         $count++;
         file_put_contents(self::ATTEST_COUNT_FILE, $count);
+    }
+
+    public static function isCurfew(): bool {
+        $h = date('H', Utils::time());
+        return $h >= 19 || $h < 6;
     }
 }
