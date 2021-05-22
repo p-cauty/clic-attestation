@@ -40,6 +40,7 @@ class CertificateModel {
 
     public static function isCurfew(): bool {
         $h = date('H', Utils::time());
-        return $h >= 19 || $h < 6;
+        //return $h >= 19 || $h < 6;
+        return true;
     }
 }

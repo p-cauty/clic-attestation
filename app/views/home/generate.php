@@ -22,13 +22,14 @@ use PitouFW\Core\Utils;
                     <?php endif ?>
                     <div id="v4-alert" class="notice alert alert-success text-center">
                         <span class="alert-close" onclick="closeNotice('v4-alert')" title="Ne plus afficher ce message">&times;</span>
-                        <?= NAME ?> est déjà compatible avec les nouvelles mesures du 19 Mars !
+                        <?= NAME ?> est déjà compatible avec les nouvelles mesures du 19 Mai !
                     </div>
-                    <div id="10km-alert" class="notice alert alert-info text-center">
-                        <span class="alert-close" onclick="closeNotice('10km-alert')" title="Ne plus afficher ce message">&times;</span>
-                        N'oubliez pas : en dessous de 10 km autour de votre domicile, un justificatif de domicile suffit
-                        en cas de contrôle.
+                    <?php if (date('H', Utils::time()) >= 6 && date('H', Utils::time()) < 20): ?>
+                    <div class="notice alert alert-info text-center">
+                        Il n'y a plus besoin d'attestation en journée depuis le 19 Mai. Revenez à partir de 20h pour
+                        générer une attestation de couvre-feu.
                     </div>
+                    <?php else: ?>
                     <div class="card rounded-lg text-dark mb-2">
                         <div class="card-header py-4"><?= $firstname ?>, générez dès maintenant votre attestation !</div>
                         <div class="card-body">
@@ -36,31 +37,17 @@ use PitouFW\Core\Utils;
                                 <div class="form-group">
                                     <label class="small text-gray-600" for="reason">Motif du déplacement</label>
                                     <select class="form-control rounded-pill" id="reason" name="reason" required>
-                                        <option value="">-- <?= $is_curfew ? 'Choisissez un motif' : 'Territoires confinés uniquement' ?> --</option>
-                                        <?php if (!$is_curfew): ?>
-                                        <optgroup label="Déplacements à 10km autour du domicile">
-                                            <option value="sport">Activité physique et promenade</option>
-                                        </optgroup>
-                                        <optgroup label="Déplacements au sein du département de résidence">
-                                            <option value="achats">Achats de première nécessité</option>
-                                            <option value="enfants">Accompagnement des enfants à l'école</option>
-                                            <option value="culte_culturel">Etablissement culturel ou lieu de culte</option>
-                                            <option value="demarche">Démarches administratives ou juridiques</option>
-                                        </optgroup>
-                                        <?php endif ?>
-                                        <optgroup label="<?= $is_curfew ? 'Couvre feu (de 19h à 6h)' : 'Déplacements sans limite de distance' ?>">
-                                            <option value="travail">Déplacement sur le lieu de travail</option>
-                                            <option value="sante">Consultations et examens de santé</option>
-                                            <option value="famille">Motif familial impérieux</option>
-                                            <option value="famille">Assistance aux personnes</option>
-                                            <option value="famille">Garde d'enfants</option>
-                                            <option value="handicap">Personnes en situation de handicap</option>
-                                            <option value="judiciaire">Convocation judiciaire ou administrative</option>
-                                            <?= $is_curfew ? '<option value="missions">Missions d\'intérêt général</option>' : '' ?>
-                                            <?= !$is_curfew ? '<option value="demenagement">Déménagement</option>' : '' ?>
-                                            <option value="transit">Déplacements de longues distances</option>
-                                            <?= $is_curfew ? '<option value="animaux">Animaux de compagnie (brefs à 1km)</option>' : '' ?>
-                                        </optgroup>
+                                        <option value="">-- Choisissez un motif --</option>
+                                        <option value="travail">Déplacement sur le lieu de travail</option>
+                                        <option value="sante">Consultations et examens de santé</option>
+                                        <option value="famille">Motif familial impérieux</option>
+                                        <option value="famille">Assistance aux personnes</option>
+                                        <option value="famille">Garde d'enfants</option>
+                                        <option value="handicap">Personnes en situation de handicap</option>
+                                        <option value="judiciaire">Convocation judiciaire ou administrative</option>
+                                        <option value="missions">Missions d\'intérêt général</option>
+                                        <option value="transit">Déplacements de longues distances</option>
+                                        <option value="animaux">Animaux de compagnie (brefs à 1km)</option>
                                     </select>
                                 </div>
                                 <div class="form-row">
@@ -80,6 +67,7 @@ use PitouFW\Core\Utils;
                             </form>
                         </div>
                     </div>
+                    <?php endif ?>
                     <div id="bookmark-alert" class="notice alert alert-info text-center">
                         <span class="alert-close" onclick="closeNotice('bookmark-alert')" title="Ne plus afficher ce message">&times;</span>
                         N'oubliez pas de mettre cette page en favoris pour ne pas la perdre
