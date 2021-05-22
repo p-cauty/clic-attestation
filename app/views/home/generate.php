@@ -20,8 +20,8 @@ use PitouFW\Core\Utils;
                             <a href="<?= WEBROOT ?>">générez un nouveau lien</a>.
                         </div>
                     <?php endif ?>
-                    <div id="v4-alert" class="notice alert alert-success text-center">
-                        <span class="alert-close" onclick="closeNotice('v4-alert')" title="Ne plus afficher ce message">&times;</span>
+                    <div id="v5-alert" class="notice alert alert-success text-center">
+                        <span class="alert-close" onclick="closeNotice('v5-alert')" title="Ne plus afficher ce message">&times;</span>
                         <?= NAME ?> est déjà compatible avec les nouvelles mesures du 19 Mai !
                     </div>
                     <?php if (date('H', Utils::time()) >= 6 && date('H', Utils::time()) < 20): ?>
