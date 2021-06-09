@@ -20,13 +20,13 @@ use PitouFW\Core\Utils;
                             <a href="<?= WEBROOT ?>">générez un nouveau lien</a>.
                         </div>
                     <?php endif ?>
-                    <div id="v5-alert" class="notice alert alert-success text-center">
-                        <span class="alert-close" onclick="closeNotice('v5-alert')" title="Ne plus afficher ce message">&times;</span>
-                        <?= NAME ?> est déjà compatible avec les nouvelles mesures du 19 Mai !
+                    <div id="v6-alert" class="notice alert alert-success text-center">
+                        <span class="alert-close" onclick="closeNotice('v6-alert')" title="Ne plus afficher ce message">&times;</span>
+                        <?= NAME ?> est déjà compatible avec les nouvelles mesures du 9 Juin !
                     </div>
-                    <?php if (date('H', Utils::time()) >= 6 && date('H', Utils::time()) < 20): ?>
+                    <?php if (date('H', Utils::time()) >= 6 && date('H', Utils::time()) < 22): ?>
                     <div class="notice alert alert-info text-center">
-                        Il n'y a plus besoin d'attestation en journée depuis le 19 Mai. Revenez à partir de 20h pour
+                        Il n'y a plus besoin d'attestation en journée depuis le 19 Mai. Revenez à partir de 22h pour
                         générer une attestation de couvre-feu.
                     </div>
                     <?php else: ?>
